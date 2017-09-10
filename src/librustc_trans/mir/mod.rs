@@ -200,6 +200,8 @@ pub fn trans_mir<'a, 'tcx: 'a>(
     instance: Instance<'tcx>,
     sig: ty::FnSig<'tcx>,
 ) {
+    info!("instance - {:?}, {:?}", instance, instance.substs);
+
     let fn_ty = FnType::new(ccx, sig, &[]);
     debug!("fn_ty: {:?}", fn_ty);
     let debug_context =
